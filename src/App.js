@@ -1,6 +1,8 @@
 import './App.css';
+import HomePage from './pages/HomePage';
 
 function App() {
+
   return (
     <div className="App">
       <nav className="navBar">
@@ -10,6 +12,9 @@ function App() {
         </ul>
       </nav>
       {/* Other components */}
+
+      <HomePage></HomePage>
+
 
       <footer>
         <p>Powered by Greenhouse</p>
