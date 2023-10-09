@@ -2,16 +2,19 @@ import { useContext } from "react";
 import React from 'react';
 
 import {useFetcher} from "../utils/DataFetcher";
+import { AllJobsApiContext } from "../contexts/AllJobsApiContext";
+import Loading from "../utils/Loading";
 
 export default function JobTable(){
 
-    const apiUrl = "https://boards-api.greenhouse.io/v1/boards/mx51dev/jobs"
+    // destructure api from AllJobsApiContext
+    const { api } = useContext(AllJobsApiContext)
 
-    const { apiData, loading, error } = useFetcher(apiUrl);
+    const { apiData, loading, error } = useFetcher(api);
 
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div><Loading /></div>;
     }
     if (error) {
         return <div>Error: {error.message}</div>;
