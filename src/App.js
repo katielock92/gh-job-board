@@ -1,5 +1,7 @@
-import './App.css';
 import HomePage from './pages/HomePage';
+import "./styles/App.css";
+import "./styles/fonts.css"
+import "./styles/header.css"
 
 function App() {
 
@@ -13,15 +15,12 @@ function App() {
       </nav>
       {/* Other components */}
 
-      <HomePage></HomePage>
-
+      <HomePage />
 
       <footer>
         <p>Powered by Greenhouse</p>
         <p>Read our Privacy Policy</p>
       </footer>
-
-
     </div>
   );
 }
