@@ -5,14 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import HeaderComponent from "./components/HeaderComponent";
+
 import AllJobsApiProvider from "./contexts/AllJobsApiContext";
 import DepartmentApiProvider from "./contexts/DepartmentApiContext";
 import LocationApiProvider from "./contexts/LocationApiContext";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+
     <AllJobsApiProvider>
       <DepartmentApiProvider>
         <LocationApiProvider>
@@ -25,6 +26,7 @@ root.render(
                 {/* Redirects invalid paths to the homepage: */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
+            <FooterComponent/>
             </BrowserRouter>
         </LocationApiProvider>
       </DepartmentApiProvider>
