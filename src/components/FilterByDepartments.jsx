@@ -22,7 +22,7 @@ function FilterByDepartment() {
     
     if (apiData && apiData.departments && apiData.departments.length > 0) {
       return (
-          <div className="department-filter>
+          <div className="department-filter">
             <h1>Jobs by Departments</h1>
               {apiData.departments.map((dept, index1) => {
                 return (
