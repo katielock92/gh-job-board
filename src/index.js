@@ -5,10 +5,12 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import HeaderComponent from "./components/HeaderComponent";
+import ApiProvider from "./contexts/AllJobsApiContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <ApiProvider>
     <BrowserRouter>
       <HeaderComponent/>
       <Routes>
@@ -19,6 +21,7 @@ root.render(
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
+    </ApiProvider>
   </React.StrictMode>
 );
 
