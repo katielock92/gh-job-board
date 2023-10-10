@@ -2,13 +2,13 @@
 
 export default function FooterComponent() {
      return (
-          <footer>
+          <div className="footer">
                <div className="footer-greenhouse">
                     <p className="greenhouse">Powered by
-                         <a href="https://www.greenhouse.com/" target="_blank" rel="noreferrer">
+                         <a href="https://www.greenhouse.com/">
                               <img 
                                    className="greenhouse-logo" 
-                                   src={require("./greenhouse-logo.png")} 
+                                   src={require("../assets/images/greenhouse-logo.png")} 
                                    alt={"Greenhouse logo"}
                               />               
                          </a>
@@ -22,6 +22,6 @@ export default function FooterComponent() {
                          </a>
                     </p>
                </div>
-          </footer>
+          </div>
      );
 }
