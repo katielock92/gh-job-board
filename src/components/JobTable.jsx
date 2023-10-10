@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import {useFetcher} from "../utils/DataFetcher";
 import { AllJobsApiContext } from "../contexts/AllJobsApiContext";
