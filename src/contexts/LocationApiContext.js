@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const LocationApiContext = createContext(null)
 
-export default function ApiProvider({children}){
+export default function LocationApiProvider({children}){
     const [apiUrl, setApiUrl] = useState("https://boards-api.greenhouse.io/v1/boards/mx51dev/offices");
 
     return (
