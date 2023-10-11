@@ -1,14 +1,15 @@
 import React from 'react';
 import { useContext } from 'react';
 import {useFetcher} from "../utils/DataFetcher";
-import { AllJobsApiContext } from "../contexts/AllJobsApiContext";
 import Loading from "../utils/Loading";
+import { MainApiContext } from '../contexts/MainApiContext';
 import { Link } from 'react-router-dom';
+
 
 export default function JobTable(){
 
-    // destructure api from AllJobsApiContext
-    const { api } = useContext(AllJobsApiContext)
+    // destructure api from MainApiContext
+    const { api } = useContext(MainApiContext)
 
     const { apiData, loading, error } = useFetcher(api);
 
@@ -19,7 +20,9 @@ export default function JobTable(){
     if (error) {
         return <div>Error: {error.message}</div>;
     }
+    
 
+    // need to fix Job Table to render all jobs with completed info from MainApiContext
     if (apiData && apiData.jobs && apiData.jobs.length > 0) {
         console.log(apiData.jobs)
         const jobCard = apiData.jobs;

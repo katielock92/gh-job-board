@@ -1,0 +1,107 @@
+.jobfilters {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+    grid-auto-columns: minmax(0, 1fr); /* Set equal column size */
+    border-radius: 3px;
+}
+
+.filter-item {
+    height: 50px;
+    width: 90%;
+    align-self: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 1.5px solid #cccccc;
+    box-shadow: 3px 3px 5px 3px rgba(0,0,0,0.2);
+    font-weight: bold;
+    color: #333
+}
+
+.search-box {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.location {
+    border-radius: 3px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    font-size: 16px;
+    &:hover {
+        background-color: rgba(112, 41, 255, 0.1);
+        border: 2px solid #7029FF;
+    }
+
+}
+
+.department {
+    border-radius: 3px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    font-size: 16px;
+    &:hover {
+        background-color: rgba(112, 41, 255, 0.1);
+        border: 2px solid #7029FF;
+    }
+
+}
+
+
+.arrow{
+    position: absolute;
+    color: #7029FF;
+    font-size: 1rem;
+    right: 5%;
+    
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+.custom-dropdown {
+    position: relative;
+  }
+  
+  .dropdown-list {
+    position: absolute;
+    width: 100%;
+    top: 130%; /* Position below the header */
+    left: 0;
+    background-color: #f4f4f4;
+    border: 1px solid whitesmoke;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+
+.dropdown-item {
+    height: 50px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+.dropdown-header {
+    float: left;
+    padding: 15px;
+    font-size: 1rem;
+}
