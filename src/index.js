@@ -10,6 +10,7 @@ import FooterComponent from "./components/FooterComponent";
 import AllJobsApiProvider from "./contexts/AllJobsApiContext";
 import DepartmentApiProvider from "./contexts/DepartmentApiContext";
 import LocationApiProvider from "./contexts/LocationApiContext";
+import JobPage from "./pages/JobPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,6 +25,7 @@ root.render(
                 {/* Route for homepage: */}
                 <Route path="/" element={<App />} />
                 {/* Add another route here for job page based on id: */}
+                <Route path="/jobs/:id" elements={<JobPage/>}/>
                 {/* Redirects invalid paths to the homepage: */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
