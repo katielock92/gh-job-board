@@ -1,4 +1,4 @@
-import { DepartmentsApiContext } from "../contexts/DepartmentApiContext";
+// import { DepartmentsApiContext } from "../contexts/DepartmentApiContext";
 import Loading from "../utils/Loading";
 import { useContext } from "react";
 import React from 'react';
@@ -8,10 +8,13 @@ import {useFetcher} from "../utils/DataFetcher";
 function FilterByDepartment() {
 
     // destructure api from DepartmentsApiContext
-    const { api } = useContext(DepartmentsApiContext)
+    // const { api } = useContext(DepartmentsApiContext)
+    // const { apiData, loading, error } = useFetcher(api);
 
     // destructure apiData, loading and error from useFetcher custom hooks
-    const { apiData, loading, error } = useFetcher(api);
+    const { apiData, loading, error } = useFetcher("https://boards-api.greenhouse.io/v1/boards/mx51dev/departments");
+
+
 
     if (loading) {
         return <div><Loading /></div>;

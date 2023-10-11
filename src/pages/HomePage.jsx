@@ -1,6 +1,5 @@
 import About from "../components/About";
 import DepartmentDropList from "../components/Departments";
-import FilterByDepartment from "../components/FilterByDepartments";
 import Location from "../components/Location";
 import LocationDropList from "../components/LocationDropList";
 import { LocationProvider } from "../contexts/LocationContext";
