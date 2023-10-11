@@ -20,7 +20,6 @@ export default function HomePage() {
         </div>
         <JobTable></JobTable>
         <FilterByDepartment></FilterByDepartment>
-      </div>
     </main>
   );
 }
