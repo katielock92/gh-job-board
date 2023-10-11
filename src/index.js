@@ -5,9 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import HeaderComponent from "./components/HeaderComponent";
-//import FooterComponent from "./components/FooterComponent";
 import MainApiProvider from "./contexts/MainApiContext";
+import FooterComponent from "./components/FooterComponent";
 import JobPage from "./pages/JobPage";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

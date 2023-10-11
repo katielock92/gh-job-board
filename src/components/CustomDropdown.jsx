@@ -32,19 +32,26 @@ const CustomDropdown = ({ items, onSelect, initialSelectedItem }) => {
       {/* Dropdown header, clicking it toggles the dropdown */}
       <div className="dropdown-header" onClick={toggleDropdown}>
         {/* Display the label of the selected item or a default message */}
-        {/* {selectedItem ? selectedItem.label : 'Select an item'} */}
-        {selectedItem ? (
-          <>
-            {selectedItem.label} <span className='arrow'>▼</span>{/* Arrow icon */}
-          </>
+        {selectedItem ? selectedItem.label : 'Select an item'}
+        {isOpen ? (
+          <span className='arrow'>▼</span>
         ) : (
-          'Select an item'
+          <span className='arrow'>▲</span>
         )}
       </div>
       {/* Dropdown list */}
       {isOpen && (
         <div className="dropdown-list">
-          {/* Map over the items and render each as a list item */}
+          {/* Render the initialSelectedItem, if it exists */}
+          {initialSelectedItem && (
+            <div
+              key={initialSelectedItem.id}
+              className="dropdown-item"
+              onClick={() => handleItemClick(initialSelectedItem)}
+            >
+              {initialSelectedItem.label}
+            </div>
+          )}
           {items.map((item) => (
             <div
               key={item.id}
