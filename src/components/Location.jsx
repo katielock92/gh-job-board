@@ -6,6 +6,10 @@ import { useContext } from 'react';
 import { MainApiContext } from '../contexts/MainApiContext';
 
 
+
+
+
+
 export default function Location(){
   
     // destructure api from LocationApiContext
