@@ -77,23 +77,19 @@ main {
   }
 }
 
-.all-jobs {
-  display: block;
-  margin: auto;
-  width: 75vw;
-}
+/* Duplicated css with the filters section  */
 
-.job-filters {
+/* .job-filters {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
   padding-bottom: 20px;
-}
+} */
 
 /* need to get the text in these to be vertically aligned */
-.search-box,
+/* .search-box,
 .location-filter,
 .department-filter {
   border: 1px solid #cccccc;
@@ -102,14 +98,23 @@ main {
   height: 6vh;
   width: 22vw;
   margin: auto;
-}
+} */
 
-.search-box {
+/* .search-box {
   margin-left: 0;
-}
+} */
 
-.location-filter {
+/* .location-filter {
   margin-right: 0;
+} */
+
+
+/* Job table section */
+
+.all-jobs {
+  display: flex;
+  margin: auto;
+  width: 75vw;
 }
 
 .job-box {
@@ -118,6 +123,7 @@ main {
   width: 75vw;
   height: 100%;
 }
+
 
 .job-item {
   /* Change flex-box to grid to test */
@@ -135,10 +141,11 @@ main {
   width: 100%;
   height: 10vh;
   background-color: #ffffff;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
+  border: 1.2px solid #cccccc;
   /* this brings the borders of rows to overlap and align with each other: */
   margin-bottom: -1px;
+  align-content: center;
+  
 }
 
 .job-item:hover {
@@ -182,7 +189,26 @@ main {
 
 } */
 
+.loading {
+  width: 6rem;
+  height: 6rem;
+  border: 5px solid #cccccc;
+  border-radius: 50%;
+  margin: 0 auto;
+  border-top-color: #7029ff;
+  animation: spinner 0.3s linear infinite;
+}
 
+
+/* responsive desgin for the jobs table section */
+
+@media only screen and (max-width: 600px) {
+  .job-item {
+    font-size: 0.9rem;
+    height: 15vh;
+  }
+
+}
 
 
 

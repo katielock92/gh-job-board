@@ -14,7 +14,7 @@ export default function HomePage() {
           <div className="all-jobs">
               <div className="jobfilters">
                   <div className="search-box filter-item">
-                      <input type='text' placeholder='Search...' />
+                      <input type='text' placeholder='SEARCH' />
                   </div>
                   <DepartmentDropList />
                   <LocationDropList/>
