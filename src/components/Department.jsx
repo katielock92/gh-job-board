@@ -6,7 +6,7 @@ import { MainApiContext } from '../contexts/MainApiContext';
 import { useDepartment } from '../contexts/DepartmentContext';
 
 
-export default function Location(){
+export default function Department(){
   
     // destructure api from LocationApiContext
     const { api } = useContext(MainApiContext)
@@ -19,9 +19,16 @@ export default function Location(){
     // Use the useLocation hook to access the selectedLocation from the context
     const { selectedLocation } = useLocation();
 
+    // Use the useLocation hook to access the selectedDeparment from the context
+    const { selectedDeparment } = useDepartment();
 
-    const { selectedDepartment } = useDepartment(); 
+    // Function to handle department change
 
+    const handleDepartmentChange = (event) => {
+        
+    }
+ 
+ 
     // Loading and error handling logic
     if (loading) {
         return 
@@ -30,10 +37,8 @@ export default function Location(){
         return <div>Error: {error.message}</div>;
     }
 
-
     if (apiData && apiData.offices && apiData.offices.length > 0) {
-    
-    console.log(selectedDepartment)
+
 
     return (
         <div>
@@ -46,7 +51,8 @@ export default function Location(){
                 <div key={office.name}>
                 {office.departments.map((department) => (
 
-                    (!selectedDepartment || selectedDepartment === 'All departments' || department.name === selectedDepartment) && (
+                    // Check if the selectedDepartment matches the current chosen department
+                    (!selectedDeparment || selectedDeparment === 'All departments' || department.name === selectedDeparment) && (
                     <div key={department.name}>
                     {department.jobs && department.jobs.length > 0 ? (
                         // Map over the jobs in the department and display job information
@@ -75,7 +81,7 @@ export default function Location(){
                     )}
                     </div>
                 )))}
-            
+
                 </div>
             )
             ))}
@@ -86,4 +92,3 @@ export default function Location(){
         return <div>No data to display</div>;
     }
 }
-

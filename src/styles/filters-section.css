@@ -32,6 +32,7 @@ input {
     border: none;
     padding: 15px;
     outline: none;
+    border-radius: 3px;
 
     &:hover {
         background-color: rgba(112, 41, 255, 0.1);
