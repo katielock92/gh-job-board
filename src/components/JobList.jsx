@@ -6,7 +6,7 @@ import { MainApiContext } from '../contexts/MainApiContext';
 import { useDepartment } from '../contexts/DepartmentContext';
 
 
-export default function Department(){
+export default function JobList(){
   
     // destructure api from LocationApiContext
     const { api } = useContext(MainApiContext)
@@ -19,16 +19,9 @@ export default function Department(){
     // Use the useLocation hook to access the selectedLocation from the context
     const { selectedLocation } = useLocation();
 
-    // Use the useLocation hook to access the selectedDeparment from the context
-    const { selectedDeparment } = useDepartment();
+    // Use the useDepartment hook to access the selectedDepartment from the context
+    const { selectedDepartment } = useDepartment(); 
 
-    // Function to handle department change
-
-    const handleDepartmentChange = (event) => {
-        
-    }
- 
- 
     // Loading and error handling logic
     if (loading) {
         return 
@@ -37,8 +30,10 @@ export default function Department(){
         return <div>Error: {error.message}</div>;
     }
 
-    if (apiData && apiData.offices && apiData.offices.length > 0) {
 
+    if (apiData && apiData.offices && apiData.offices.length > 0) {
+    
+    console.log(selectedDepartment)
 
     return (
         <div>
@@ -51,8 +46,7 @@ export default function Department(){
                 <div key={office.name}>
                 {office.departments.map((department) => (
 
-                    // Check if the selectedDepartment matches the current chosen department
-                    (!selectedDeparment || selectedDeparment === 'All departments' || department.name === selectedDeparment) && (
+                    (!selectedDepartment || selectedDepartment === 'All departments' || department.name === selectedDepartment) && (
                     <div key={department.name}>
                     {department.jobs && department.jobs.length > 0 ? (
                         // Map over the jobs in the department and display job information
@@ -81,7 +75,6 @@ export default function Department(){
                     )}
                     </div>
                 )))}
-
                 </div>
             )
             ))}
@@ -92,3 +85,4 @@ export default function Department(){
         return <div>No data to display</div>;
     }
 }
+
