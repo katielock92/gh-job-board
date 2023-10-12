@@ -9,7 +9,7 @@ const CustomDropdown = ({ items, onSelect, initialSelectedItem }) => {
 
   // Use useEffect to update selectedItem when initialSelectedItem changes
   useEffect(() => {
-    setSelectedItem(initialSelectedItem);
+    setSelectedItem(selectedItem);
   }, [initialSelectedItem]);
 
   // Function to toggle the dropdown's open/close state
@@ -57,8 +57,8 @@ const CustomDropdown = ({ items, onSelect, initialSelectedItem }) => {
               key={item.id}
               className="dropdown-item"
               onClick={() => handleItemClick(item)}
-            >
-              {item.label}
+            > 
+              <p>{item.label}</p>
             </div>
           ))}
         </div>
