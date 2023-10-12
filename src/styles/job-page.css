@@ -1,0 +1,59 @@
+.job-page {
+  display: block;
+  margin: auto;
+  width: 75vw;
+  padding-top: 20px;
+}
+
+.job-links, .job-links a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: rgba(79, 80, 82, 0.6);
+}
+
+.job-header {
+  display: flex;
+  flex-direction: row;
+
+  .job-summary-div {
+    width: 70%;
+    .job-attributes {
+        color: #6637f5;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .job-attributes span {
+            color: rgba(79, 80, 82, 0.6);
+        }
+    }
+  }
+
+  .apply-div {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .apply-button {
+    background-color: #6637f5;
+    color: #ffffff;
+    font-size: 18px;
+    border-color: #6637f5;
+    border-style: none;
+    border-radius: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .apply-button:hover {
+    opacity: 90%;
+    cursor: pointer;
+  }
+
+}
+
+.job-description {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

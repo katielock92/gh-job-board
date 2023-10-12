@@ -16,7 +16,7 @@ main {
     font-size: 30px;
     color: rgba(79, 80, 82, 0.6);
     .text-purple {
-      color: #7029ff;
+      color: #6637f5;
     }
   }
 }
@@ -150,7 +150,7 @@ main {
 
 .job-item:hover {
   background-color: rgba(112, 41, 255, 0.1);
-  border: 1px solid #7029ff;
+  border: 1px solid #6637f5;
   border-radius: 3px;
   /* this brings the hovered row above the others so the full colour shows: */
   /* not working as expected now - revisit this */
