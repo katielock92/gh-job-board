@@ -3,54 +3,80 @@ import Loading from "../utils/Loading";
 import { useContext } from "react";
 import React from 'react';
 import {useFetcher} from "../utils/DataFetcher";
+import {MainApiContext} from "../contexts/MainApiContext";
+import { Link } from "react-router-dom";
 
 
-function FilterByDepartment() {
-
-    // destructure api from DepartmentsApiContext
-    // const { api } = useContext(DepartmentsApiContext)
-    // const { apiData, loading, error } = useFetcher(api);
-
-    // destructure apiData, loading and error from useFetcher custom hooks
-    const { apiData, loading, error } = useFetcher("https://boards-api.greenhouse.io/v1/boards/mx51dev/departments");
+function DefaultJobTable() {
 
 
+    // destructure api from LocationApiContext
+    const { api } = useContext(MainApiContext)
+    
+    // Fetch data using custom hook useFetcher
+    const { apiData, loading, error } = useFetcher(api);
 
     if (loading) {
         return <div><Loading /></div>;
     }
+
     if (error) {
         return <div>Error: {error.message}</div>;
     }
     
-    if (apiData && apiData.departments && apiData.departments.length > 0) {
+    if (apiData && apiData.offices && apiData.offices.length > 0) {
+    
       return (
-          <div >
-            <h1>Jobs by Departments</h1>
-              {apiData.departments.map((dept, index1) => {
+        <div>
+
+            {/* Map over the offices and their departments to display the information */}
+            {apiData.offices.map((office) => {
                 return (
-                  // inline styling for testing - can remove when css is done
-                  <div key={dept.id} style={{backgroundColor:"whitesmoke", padding: "5px", margin: "5px"}}>
-                    <h3>{dept.name}</h3>
-                    <ul>
-                      {dept.jobs.map((job, index2) => {
-                        return (
-                        <li key={dept.id + '-' + index2}>
-                          <div>{job.title}</div>
-                          <div>{job.absolute_url}</div>
-                        </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                );
-              })}
-          </div>
-      );
+                  <div key={office.name}>
+                  {office.departments.map((department) => {
+                    return (
+                    <div key={department.name}>
+                    {department.jobs && department.jobs.length > 0 ? (
+                        // Map over the jobs in the department and display job information
+                        department.jobs.map((job) => {
+                          return (
+                            <div key={job.title}>
+                                <div className="all-jobs">
+                                <Link className="job-box "to={`/jobs/${job.id}`}> {/* Links entire tile to job page */}
+                                <div className="job-box job-item">
+                                
+                                    <div className="job-item-title">{job.title} {/* Display job name */}</div>
+                                    <div className="job-item-department">{department.name}</div> {/* Display department name */}
+                                    <div className="job-item-location">{office.name}</div>  {/* Display office location */}
+                                    
+                                </div>
+                                </Link>
+                                </div>
+                            </div>
+                            )
+                        })
+                    ) : (
+                        // If no jobs are available, display a message and other information
+                        <div className="all-jobs">
+                        <div className="job-box job-item" >
+                            <div className="job-item-title">No jobs available</div>
+                            <div className="job-item-department">{department.name}</div>
+                            <div className="job-item-location">{office.name}</div>
+                        </div>
+                        </div>
+                    )}
+                    </div>
+                    )
+                })}
+                </div>
+                )
+            })}
+        </div>
+        );
+
     } else {
-      return <div>No data to display</div>;
+        return <div>No data to display</div>;
     }
 }
 
-
-export default FilterByDepartment;
+export default DefaultJobTable;

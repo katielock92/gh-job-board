@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import HeaderComponent from "./components/HeaderComponent";
 import MainApiProvider from "./contexts/MainApiContext";
-import FooterComponent from "./components/FooterComponent";
+//import FooterComponent from "./components/FooterComponent";
 import JobPage from "./pages/JobPage";
 import HomePage from "./pages/HomePage";
 import "./styles/App.css";
