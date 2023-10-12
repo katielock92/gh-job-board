@@ -4,9 +4,9 @@
     text-align: center;
     justify-items: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
-    grid-auto-columns: minmax(0, 1fr); /* Set equal column size */
+    grid-template-columns: 40% 30% 30%;
     border-radius: 3px;
+    margin-bottom: 3%;
 }
 
 .filter-item {
@@ -22,12 +22,22 @@
 }
 
 .search-box {
-    margin-left: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 }
 
+input {
+    border: none;
+    padding: 15px;
+    outline: none;
+
+    &:hover {
+        background-color: rgba(112, 41, 255, 0.1);
+        border: 2px solid #7029FF;
+    }
+}
 
 .location {
     border-radius: 3px;
@@ -35,12 +45,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 10%;
 
-
-    font-size: 16px;
     &:hover {
         background-color: rgba(112, 41, 255, 0.1);
         border: 2px solid #7029FF;
+        cursor: pointer;
     }
 
 }
@@ -51,12 +61,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 10%;
 
-
-    font-size: 16px;
     &:hover {
         background-color: rgba(112, 41, 255, 0.1);
         border: 2px solid #7029FF;
+        cursor: pointer;
     }
 
 }
@@ -84,9 +94,11 @@
     top: 130%; /* Position below the header */
     left: 0;
     background-color: #f4f4f4;
-    border: 1px solid whitesmoke;
-    max-height: 150px;
+    border: 1.5px solid whitesmoke;
+    max-height: 200px;
     overflow-y: auto;
+    border-radius: 3px;
+    z-index: 20;
   }
 
 .dropdown-item {
@@ -104,3 +116,82 @@
     }
 }
 
+.dropdown-header {
+    padding: 15px;
+    font-size: 1rem;
+}
+
+
+/* responsive desgin for the filter boxes section */
+
+@media only screen and (max-width: 800px) {
+
+    .jobfilters {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    }
+    
+    input {
+        padding: 10px;
+        padding-left: 15px;
+    }
+
+    .filter-item {
+        margin: 8px;
+        height: 35%;
+    }
+
+    .dropdown-header {
+        font-size: 0.9rem;
+    }
+
+    .arrow {
+        font-size: 0.9rem;
+    }
+
+    .dropdown-item {
+        height: 30px;
+    }
+
+    .filter-item {
+        width: 100%;
+    }
+}
+  
+
+@media only screen and (max-width: 600px) {
+
+    .jobfilters {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+    
+    input {
+        padding: 10px;
+        padding-left: 15px;
+    }
+
+    .filter-item {
+        margin: 8px;
+        height: 35%;
+    }
+
+    .dropdown-header {
+        font-size: 0.9rem;
+    }
+
+    .arrow {
+        font-size: 0.9rem;
+    }
+
+    .dropdown-item {
+        height: 30px;
+    }
+}
+  
