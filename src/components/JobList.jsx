@@ -1,10 +1,10 @@
 import React from 'react';
 import {useFetcher} from "../utils/DataFetcher";
 import { useLocation } from '../contexts/LocationContext';
+import { useDepartment } from '../contexts/DepartmentContext';
 import { useContext } from 'react';
 import { MainApiContext } from '../contexts/MainApiContext';
 import { Link } from 'react-router-dom';
-import { useDepartment } from '../contexts/DepartmentContext';
 
 
 export default function JobList(){
@@ -34,7 +34,6 @@ export default function JobList(){
 
     if (apiData && apiData.offices && apiData.offices.length > 0) {
     
-    console.log(selectedDepartment)
 
     return (
         <div>
@@ -88,4 +87,3 @@ export default function JobList(){
         return <div>No data to display</div>;
     }
 }
-

@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState } from 'react';
 const LocationContext = createContext();
 
 export function LocationProvider({ children }) {
-  const [selectedLocation, setSelectedLocation] = useState('All location');
+  const [selectedLocation, setSelectedLocation] = useState('All offices');
 
   return (
     <LocationContext.Provider value={{ selectedLocation, setSelectedLocation }}>

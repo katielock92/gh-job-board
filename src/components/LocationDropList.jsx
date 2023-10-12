@@ -16,7 +16,7 @@ export default function LocationDropList(){
     const { apiData, loading, error } = useFetcher(api);
   
     // Use the custom location context to access selectedLocation state and setter
-    const { selectedLocation, setSelectedLocation } = useLocation();
+    const { setSelectedLocation } = useLocation();
 
 
     if (loading) {

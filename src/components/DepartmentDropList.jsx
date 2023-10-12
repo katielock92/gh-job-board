@@ -11,9 +11,7 @@ function DepartmentDropList(){
 
     // Fecth data using custom hook useFetcher
     const { apiData, loading, error } = useFetcher(api);
-
-    const { selectedDepartment, setSelectedDepartment } = useDepartment();
-
+    const { setSelectedDepartment } = useDepartment();
     
     
     if (loading) {
@@ -52,5 +50,4 @@ function DepartmentDropList(){
 }
 
 export default DepartmentDropList;
-
 
