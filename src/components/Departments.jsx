@@ -1,6 +1,5 @@
 import React from 'react';
 import {useFetcher} from "../utils/DataFetcher";
-import Loading from "../utils/Loading";
 import CustomDropdown from './CustomDropdown';
 
 
@@ -14,7 +13,7 @@ function DepartmentDropList(){
 
 
     if (loading) {
-        return <div><Loading /></div>;
+        return 
     }
     if (error) {
         return <div>Error: {error.message}</div>;

@@ -1,6 +1,5 @@
 import React from 'react';
 import {useFetcher} from "../utils/DataFetcher";
-import Loading from "../utils/Loading";
 import { useLocation } from '../contexts/LocationContext';
 import { useContext } from 'react';
 import { MainApiContext } from '../contexts/MainApiContext';
@@ -26,7 +25,7 @@ export default function Location(){
 
     // Loading and error handling logic
     if (loading) {
-        return <div><Loading /></div>;
+        return 
     }
     if (error) {
         return <div>Error: {error.message}</div>;
