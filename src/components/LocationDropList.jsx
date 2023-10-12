@@ -3,12 +3,18 @@ import {useFetcher} from "../utils/DataFetcher";
 import Loading from "../utils/Loading";
 import CustomDropdown from './CustomDropdown';
 import { useLocation } from '../contexts/LocationContext';
+import { MainApiContext } from '../contexts/MainApiContext';
+import { useContext } from 'react';
 
 export default function LocationDropList(){
-
+  
+    // destructure api from LocationApiContext
+    const { api } = useContext(MainApiContext)
+    
+    
     // Fecth data using custom hook useFetcher
-    const { apiData, loading, error } = useFetcher("https://boards-api.greenhouse.io/v1/boards/mx51dev/offices");
-
+    const { apiData, loading, error } = useFetcher(api);
+  
     // Use the custom location context to access selectedLocation state and setter
     const { selectedLocation, setSelectedLocation } = useLocation();
 
@@ -35,7 +41,7 @@ export default function LocationDropList(){
         };
 
         // Set the default value for the dropdown
-        const initialSelectedItem = { id: 0, label: 'All locations' };
+        const initialSelectedItem = { id: 0, label: 'All offices' };
 
         // Return both the HTML and selectedLocation state
         return (
