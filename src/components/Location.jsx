@@ -3,6 +3,7 @@ import {useFetcher} from "../utils/DataFetcher";
 import { useLocation } from '../contexts/LocationContext';
 import { useContext } from 'react';
 import { MainApiContext } from '../contexts/MainApiContext';
+import { Link } from 'react-router-dom';
 
 
 
@@ -50,13 +51,15 @@ export default function Location(){
                         department.jobs.map((job) => (
                         <div key={job.title}>
                             <div className="all-jobs">
+                            <Link className="job-box "to={`/jobs/${job.id}`}> {/* Links entire tile to job page */}
                             <div className="job-box job-item">
-                                <div className="job-item-title">
-                                <a href={job.absolute_url}>{job.title}</a> {/* Display job name and link*/}
-                                </div>
+                            
+                                <div className="job-item-title">{job.title} {/* Display job name */}</div>
                                 <div className="job-item-department">{department.name}</div> {/* Display department name */}
                                 <div className="job-item-location">{office.name}</div>  {/* Display office location */}
+                                
                             </div>
+                            </Link>
                             </div>
                         </div>
                         ))
