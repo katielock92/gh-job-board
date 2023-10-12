@@ -30,7 +30,6 @@ export default function Location(){
 
     if (apiData && apiData.offices && apiData.offices.length > 0) {
 
-        console.log(apiData)
 
     return (
         <div>
@@ -39,7 +38,7 @@ export default function Location(){
             {apiData.offices.map((office) => (
             
             // Check if the selectedLocation matches the current office's location
-            (!selectedLocation || office.name === selectedLocation) && (
+            (!selectedLocation || selectedLocation === 'All offices' || office.name === selectedLocation) && (
                 <div key={office.name}>
                 {office.departments.map((department) => (
                     <div key={department.name}>
