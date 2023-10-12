@@ -32,6 +32,7 @@ input {
     border: none;
     padding: 15px;
     outline: none;
+    border-radius: 3px;
 
     &:hover {
         background-color: rgba(112, 41, 255, 0.1);
@@ -111,8 +112,9 @@ input {
     justify-items: center;
     font-size: 1rem;
     color: #333;
-    &:hover{
+    &:hover {
         cursor:pointer;
+        background-color: lightgrey;
     }
 }
 

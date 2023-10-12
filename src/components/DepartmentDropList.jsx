@@ -1,6 +1,7 @@
 import React from 'react';
-import {useFetcher} from "../utils/DataFetcher";
+import { useFetcher} from "../utils/DataFetcher";
 import CustomDropdown from './CustomDropdown';
+import { useDepartment } from '../contexts/DepartmentContext';
 
 
 function DepartmentDropList(){
@@ -11,7 +12,10 @@ function DepartmentDropList(){
     // Fecth data using custom hook useFetcher
     const { apiData, loading, error } = useFetcher(api);
 
+    const { selectedDepartment, setSelectedDepartment } = useDepartment();
 
+    
+    
     if (loading) {
         return 
     }
@@ -26,43 +30,15 @@ function DepartmentDropList(){
             label: department.name,
         }));
 
-        // keep the below code to revisit when re-trying to render departments dropdown list from MainApiContext
-
-        // const departmentItems = apiData.offices.map((office) => {
-        //     return (
-        //         office.departments.map( (dept, index2) => {
-        //             return ({
-        //                 id: dept.id,
-        //                 name: dept.name,
-        //             });
-        //         })
-        //     );
-        // })
-
-        // let departmentItems = [];
-
-        // apiData.offices.forEach( (office) => {
-        //     office.departments.forEach( (dept, index2) => {
-        //         return (
-        //             departmentItems.push([{
-        //                 id: dept.id,
-        //                 name: dept.name,
-        //                 }])
-        //             )
-        //         })
-        // })
-
-
         // To handle the select the current item 
         const handleSelect = (selectedItem) => {
-            // to do something more
+            setSelectedDepartment(selectedItem.label)
         };
         
         const initialSelectedItem = { id: 0, label: 'All departments' };
 
         return (
             <div className="department filter-item">
-
                 <CustomDropdown  
                  items={departmentItems}
                  onSelect={handleSelect}

@@ -77,37 +77,6 @@ main {
   }
 }
 
-/* Duplicated css with the filters section  */
-
-/* .job-filters {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding-bottom: 20px;
-} */
-
-/* need to get the text in these to be vertically aligned */
-/* .search-box,
-.location-filter,
-.department-filter {
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
-  border-radius: 3px;
-  height: 6vh;
-  width: 22vw;
-  margin: auto;
-} */
-
-/* .search-box {
-  margin-left: 0;
-} */
-
-/* .location-filter {
-  margin-right: 0;
-} */
-
 
 /* Job table section */
 
@@ -132,7 +101,7 @@ main {
   padding: 0px;
   display: grid;
   row-gap: 10px;
-  grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+  grid-template-columns: 44% 28% 28%;
   grid-auto-columns: minmax(0, 1fr); /* Set equal column size */
 
   /* display: flex;
@@ -175,20 +144,23 @@ main {
 }
 
 
-/* Comment because I was usong grid */
-/* .job-item-title {
-  width: 100%;
-  padding-left: 1vw;
-  background-color: transparent;
-} */
+.job-item-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
 
-/* .job-item-location {
-  width: 100%;
-  padding-left: 1vw;
-  background-color: transparent;
-  font-family: "Light";
+.job-item-location {
+  color: #5b5b5b;
+  font-weight: 500;
+  font-size: 1rem;
+}
 
-} */
+.job-item-department {
+  color: #5b5b5b;
+  font-weight: 500;
+  font-size: 1rem;
+}
 
 .loading {
   width: 6rem;
@@ -207,6 +179,7 @@ main {
   .job-item {
     font-size: 0.9rem;
     height: 15vh;
+    grid-template-columns: repeat(3, 1fr);
   }
 
 }

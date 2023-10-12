@@ -1,7 +1,8 @@
 import About from "../components/About";
-import DepartmentDropList from "../components/Departments";
-import Location from "../components/Location";
+import DepartmentDropList from "../components/DepartmentDropList";
+import JobList from "../components/JobList";
 import LocationDropList from "../components/LocationDropList";
+import { DepartmentProvider } from "../contexts/DepartmentContext";
 import { LocationProvider } from "../contexts/LocationContext";
 
 
@@ -9,6 +10,7 @@ export default function HomePage() {
 
   return (
     <LocationProvider>
+      <DepartmentProvider>
       <main>
         <About/>
           <div className="all-jobs">
@@ -20,8 +22,9 @@ export default function HomePage() {
                   <LocationDropList/>
               </div>
           </div>
-          <Location />
+          <JobList />
       </main>
+      </DepartmentProvider>
     </LocationProvider>
   );
 }

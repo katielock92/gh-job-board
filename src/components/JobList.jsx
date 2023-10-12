@@ -4,13 +4,10 @@ import { useLocation } from '../contexts/LocationContext';
 import { useContext } from 'react';
 import { MainApiContext } from '../contexts/MainApiContext';
 import { Link } from 'react-router-dom';
+import { useDepartment } from '../contexts/DepartmentContext';
 
 
-
-
-
-
-export default function Location(){
+export default function JobList(){
   
     // destructure api from LocationApiContext
     const { api } = useContext(MainApiContext)
@@ -22,7 +19,9 @@ export default function Location(){
   
     // Use the useLocation hook to access the selectedLocation from the context
     const { selectedLocation } = useLocation();
- 
+
+    // Use the useDepartment hook to access the selectedDepartment from the context
+    const { selectedDepartment } = useDepartment(); 
 
     // Loading and error handling logic
     if (loading) {
@@ -32,8 +31,10 @@ export default function Location(){
         return <div>Error: {error.message}</div>;
     }
 
-    if (apiData && apiData.offices && apiData.offices.length > 0) {
 
+    if (apiData && apiData.offices && apiData.offices.length > 0) {
+    
+    console.log(selectedDepartment)
 
     return (
         <div>
@@ -41,10 +42,12 @@ export default function Location(){
             {/* Map over the offices and their departments to display the information */}
             {apiData.offices.map((office) => (
             
-            // Check if the selectedLocation matches the current office's location
-            (!selectedLocation || selectedLocation === 'All offices' || office.name === selectedLocation) && (
+            // Check if the selectedLocation and selectedDepartment matches the current department and location
+            (!selectedLocation || selectedLocation === 'All offices' || selectedDepartment === 'All departments' || office.name === selectedLocation) && (
                 <div key={office.name}>
                 {office.departments.map((department) => (
+
+                    (!selectedDepartment || selectedDepartment === 'All departments' || department.name === selectedDepartment) && (
                     <div key={department.name}>
                     {department.jobs && department.jobs.length > 0 ? (
                         // Map over the jobs in the department and display job information
@@ -74,8 +77,7 @@ export default function Location(){
                         </div>
                     )}
                     </div>
-                ))}
-
+                )))}
                 </div>
             )
             ))}
