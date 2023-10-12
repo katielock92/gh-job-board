@@ -41,8 +41,8 @@ export default function JobList(){
             {/* Map over the offices and their departments to display the information */}
             {apiData.offices.map((office) => (
             
-            // Check if the selectedLocation matches the current office's location
-            (!selectedLocation || selectedLocation === 'All offices' || office.name === selectedLocation) && (
+            // Check if the selectedLocation and selectedDepartment matches the current department and location
+            (!selectedLocation || selectedLocation === 'All offices' || selectedDepartment === 'All departments' || office.name === selectedLocation) && (
                 <div key={office.name}>
                 {office.departments.map((department) => (
 
