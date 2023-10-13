@@ -75,7 +75,7 @@ export default function JobList() {
     // Call the checkNoJob() function
     // Display a message if there is no available jobs
     if (checkNoJob()) {
-        return <h3>There is currently no jobs available.</h3>
+        return <h3 className='no-jobs'>There is currently no jobs available.</h3>
     }
 
 
