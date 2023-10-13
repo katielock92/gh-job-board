@@ -9,12 +9,13 @@
      bottom: 0;
      left: 0;
      z-index: 10;
-     background-color: #eee;
-     width: 100%;
-     padding: 1rem 0;
+     /* helps stick the footer to bottom of the page - 100vw */
+     width: 100vw;
+     padding: 0.5rem 0;
      font-size: 12px;
-     line-height: 3em;
-     margin-top: 100px;
+     line-height: 2em;
+     margin-top: 30px;
+     border-top: 1px solid #cccccc;
 }
 
 .footer-greenhouse {

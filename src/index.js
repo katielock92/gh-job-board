@@ -25,7 +25,7 @@ root.render(
           <Routes>
             {/* Route for homepage: */}
             <Route path="/" element={<HomePage />} />
-            {/* Add another route here for job page based on id: */}
+            {/* Route for job page based on id: */}
             <Route path="/jobs/:id" element={<JobPage />} />
             {/* Redirects invalid paths to the homepage: */}
             <Route path="*" element={<Navigate to="/" replace />} />

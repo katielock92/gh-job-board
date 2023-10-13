@@ -5,7 +5,7 @@
     justify-items: center;
     display: grid;
     grid-template-columns: 40% 30% 30%;
-    border-radius: 3px;
+    border-radius: 5px;
     margin-bottom: 3%;
 }
 
@@ -23,6 +23,7 @@
 
 .search-box {
     width: 100%;
+    border-radius: 5px;
 }
 
 .search-box-content {
@@ -45,6 +46,8 @@ input {
     margin-left: -65%;
     outline: none;
     background-color: rgba(112, 41, 255, 0);
+    border-radius: 5px;
+
 
     &:hover {
         background-color: rgba(112, 41, 255, 0);
@@ -52,12 +55,13 @@ input {
 }
 
 .location {
-    border-radius: 3px;
+    border-radius: 5px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 10%;
+    border-radius: 5px;
 
     &:hover {
         background-color: rgba(112, 41, 255, 0.1);
@@ -68,7 +72,7 @@ input {
 }
 
 .department {
-    border-radius: 3px;
+    border-radius: 5px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -106,7 +110,7 @@ input {
     top: 130%; /* Position below the header */
     left: 0;
     background-color: #f4f4f4;
-    border: 1.5px solid whitesmoke;
+    border: 1.5px solid lightgrey;
     max-height: 200px;
     overflow-y: auto;
     border-radius: 3px;
@@ -145,6 +149,10 @@ h3 {
 
 @media only screen and (max-width: 800px) {
 
+    .power-div {
+        text-align: center;
+    }
+
     .jobfilters {
         display: flex;
         flex-direction: column-reverse;
@@ -154,6 +162,7 @@ h3 {
     }
     
     input {
+        text-align: center;
         padding: 10px;
         padding-left: 15px;
     }
