@@ -14,14 +14,12 @@ import "./styles/header.css";
 import "./styles/filters-section.css";
 import "./styles/footer.css";
 import "./styles/job-page.css"
-import JobApiProvider from "./contexts/IndividualJobApiContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
     <MainApiProvider>
-      <JobApiProvider>
         <BrowserRouter>
           <HeaderComponent />
           <Routes>
@@ -34,7 +32,6 @@ root.render(
           </Routes>
           <FooterComponent/>
         </BrowserRouter>
-      </JobApiProvider>
     </MainApiProvider>
   // </React.StrictMode>
 );

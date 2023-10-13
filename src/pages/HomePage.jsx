@@ -4,6 +4,7 @@ import JobList from "../components/JobList";
 import LocationDropList from "../components/LocationDropList";
 import { DepartmentProvider } from "../contexts/DepartmentContext";
 import { LocationProvider } from "../contexts/LocationContext";
+import { FaSearch } from "react-icons/fa"
 
 
 export default function HomePage() {
@@ -16,7 +17,10 @@ export default function HomePage() {
           <div className="all-jobs">
               <div className="jobfilters">
                   <div className="search-box filter-item">
-                      <input type='text' placeholder='SEARCH' />
+                      <div className="search-box-content">
+                        <FaSearch id="search-icon" />
+                        <input type='text' placeholder='SEARCH' />
+                      </div>
                   </div>
                   <DepartmentDropList />
                   <LocationDropList/>
