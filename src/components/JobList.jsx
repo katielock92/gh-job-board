@@ -35,47 +35,51 @@ export default function JobList() {
         return <div>No API data to display</div>;
     }
 
-    // 
+    // Check if the selectedLocation matches the current location
+    // Filter and store the value of the chosen option of offices in dropdown list, that matches the selectedLocation
     const filteredOffices = (!selectedLocation || selectedLocation === 'All offices') ? apiData.offices : apiData.offices.filter((office) => {
         return office.name === selectedLocation
     })
+    //console.log(filteredOffices)
 
+    // Define a function to check if the current office has no jobs available 
     const checkNoJob = () => {
+
+        // Check if filteredOffices is an empty list
         if (filteredOffices.length === 0) {
             return true
         }
 
+        // With the current filteredOffices, filter and store the value of the chosen option of departments in dropdown list, that matches selectedDepartment
+        // Using flatMap() to flatten the result by one level
         const filteredDepartments = filteredOffices.flatMap((office) => {
+            // Check if the selectedDepartment matches the current department
             if (!selectedDepartment || selectedDepartment === 'All departments') {
                 return office.departments
             }
             return office.departments.filter(department => department.name === selectedDepartment)
         })
 
+        // filteredDepartments is an empty list
         if (filteredDepartments.length === 0) {
             return true
         }
 
+        // Store the value of jobs in the filteredDepartments array
         const jobResults = filteredDepartments.flatMap(department => department.jobs)
 
+        // if jobResults array is empty, that means there is no available jobs that match the selectedDepartment and selectedLocation
         return jobResults.length === 0
     }
 
+    // Call the checkNoJob() function
+    // Display a message if there is no available jobs
     if (checkNoJob()) {
-        return <div>No jobs available</div>
+        return <h3>There is currently no jobs available.</h3>
     }
 
-    const showDepartments = (office) => {
-        const filteredDepartments = (!selectedDepartment || selectedDepartment === 'All departments') ? office.departments : office.departments.filter(department => department.name === selectedDepartment)
 
-        return filteredDepartments.map(department => (
-            <div key={department.name} >
-                {showJobs(department, office.name)}
-            </div>
-        ))
-
-    }
-
+    // Iterate through list of jobs existing in filteredDepartments array and return the jobs information as jsx
     const showJobs = (department, officeName) => department.jobs.map(job => <div key={job.title}>
         <div className="all-jobs">
             <Link className="job-box " to={`/jobs/${job.id}`}> {/* Links entire tile to job page */}
@@ -88,11 +92,27 @@ export default function JobList() {
         </div>
     </div>)
 
+
+    // Check if the selectedDepartment matches the current location
+    // Iterate through filteredDepartments array and return a list of its elements as jsx
+    const showDepartments = (office) => {
+        const filteredDepartments = (!selectedDepartment || selectedDepartment === 'All departments') ? office.departments : office.departments.filter(department => department.name === selectedDepartment)
+
+        return filteredDepartments.map(department => (
+            <div key={department.name} >
+                {showJobs(department, office.name)}
+            </div>
+        ))
+
+    }
+
+    // If not checkNoJob()
+    // Iterate through filteredOffices array and return a list of its elements as jsx
     return (
         <div>
             {filteredOffices.map((office) => {
                 return (
-                    < div key={office.name} >
+                    <div key={office.name} >
                         {showDepartments(office)}
                     </div>
                 )
@@ -101,6 +121,8 @@ export default function JobList() {
     )
 }
 
+
+// Old code logic
 
 // return (
 //     <div>
@@ -133,8 +155,13 @@ export default function JobList() {
 //                                         </div>
 //                                     ))
 //                                 ) : (
-//                                     // If no jobs are available, display a message and other information
-//                                     <div>No jobs available</div>
+//                                     <div className="all-jobs">
+//                                     <div className="job-box job-item" >
+//                                          <div className="job-item-title">No jobs available</div>
+//                                          <div className="job-item-department">{department.name}</div>
+//                                          <div className="job-item-location">{office.name}</div>
+//                                     </div>
+//                                     </div>
 //                                 )}
 //                             </div>
 //                         )))}

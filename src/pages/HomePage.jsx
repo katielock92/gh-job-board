@@ -1,16 +1,13 @@
-import { useState } from "react";
 import About from "../components/About";
 import DepartmentDropList from "../components/DepartmentDropList";
 import JobList from "../components/JobList";
 import LocationDropList from "../components/LocationDropList";
-import { SearchBar } from "../components/Search";
 import { DepartmentProvider } from "../contexts/DepartmentContext";
 import { LocationProvider } from "../contexts/LocationContext";
+import { FaSearch } from "react-icons/fa"
 
 
 export default function HomePage() {
-
-  const [results, setResults] = useState([])
 
   return (
     <LocationProvider>
@@ -19,8 +16,12 @@ export default function HomePage() {
         <About/>
           <div className="all-jobs">
               <div className="jobfilters">
-                  <SearchBar setResults={setResults} />
-      
+                  <div className="search-box filter-item">
+                      <div className="search-box-content">
+                        <FaSearch id="search-icon" />
+                        <input type='text' placeholder='SEARCH' />
+                      </div>
+                  </div>
                   <DepartmentDropList />
                   <LocationDropList/>
               </div>
