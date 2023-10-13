@@ -29,7 +29,7 @@
 .search-box-content {
 
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 15% 85%;
     align-items: center;
     justify-items: center;
 
@@ -43,16 +43,17 @@
 input {
     border: none;
     padding: 15px;
-    margin-left: -65%;
     outline: none;
     background-color: rgba(112, 41, 255, 0);
     border-radius: 5px;
-
+    width: 100%;
 
     &:hover {
         background-color: rgba(112, 41, 255, 0);
     }
 }
+
+
 
 .location {
     border-radius: 5px;
@@ -164,7 +165,7 @@ h3 {
     input {
         text-align: center;
         padding: 10px;
-        padding-left: 15px;
+        margin-left: -85%;
     }
 
     .filter-item {
