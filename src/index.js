@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import HeaderComponent from "./components/HeaderComponent";
 import MainApiProvider from "./contexts/MainApiContext";
-//import FooterComponent from "./components/FooterComponent";
+import FooterComponent from "./components/FooterComponent";
 import JobPage from "./pages/JobPage";
 import HomePage from "./pages/HomePage";
 import "./styles/App.css";
@@ -14,14 +14,12 @@ import "./styles/header.css";
 import "./styles/filters-section.css";
 import "./styles/footer.css";
 import "./styles/job-page.css"
-import JobApiProvider from "./contexts/IndividualJobApiContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
     <MainApiProvider>
-      <JobApiProvider>
         <BrowserRouter>
           <HeaderComponent />
           <Routes>
@@ -32,9 +30,8 @@ root.render(
             {/* Redirects invalid paths to the homepage: */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
-          {/* <FooterComponent/> */}
+          <FooterComponent/>
         </BrowserRouter>
-      </JobApiProvider>
     </MainApiProvider>
   // </React.StrictMode>
 );

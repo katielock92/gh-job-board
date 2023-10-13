@@ -47,8 +47,8 @@ export default function JobList(){
                 {office.departments.map((department) => (
 
                     (!selectedDepartment || selectedDepartment === 'All departments' || department.name === selectedDepartment) && (
-                    <div key={department.name}>
-                        {(department.jobs && department.jobs.length > 0) && (
+                        <div key={department.name}>
+                            {department.jobs && department.jobs.length > 0 ? (
                             // Map over the jobs in the department and display job information
                             department.jobs.map((job) => (
                             <div key={job.title}>
@@ -65,6 +65,9 @@ export default function JobList(){
                                 </div>
                             </div>
                             ))
+                        ) : (
+                            // If no jobs are available, display a message and other information
+                            console.log(department.jobs)
                         )}
                     </div>
                 )))}
