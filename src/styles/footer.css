@@ -9,6 +9,7 @@
      bottom: 0;
      left: 0;
      z-index: 10;
+     /* helps stick the footer to bottom of the page - 100vw */
      width: 100vw;
      padding: 0.5rem 0;
      font-size: 12px;

@@ -46,15 +46,15 @@
     .apply-button {
       background-color: #6637f5;
       color: #ffffff;
-      font-size: 24px;
+      font-size: 20px;
       border-color: #6637f5;
       border-style: none;
       border-radius: 30px;
-      padding: 15px 20px;
+      padding: 30px 20px;
     }
 
     .apply-button:hover {
-      opacity: 90%;
+      opacity: 80%;
       cursor: pointer;
     }
   }
