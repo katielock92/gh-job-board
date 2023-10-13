@@ -1,4 +1,5 @@
 .job-page {
+  /* default setting for content div on job page: */
   display: block;
   margin: auto;
   width: 75vw;
@@ -7,104 +8,96 @@
 }
 
 .job-links,
-.job-links a {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: rgba(79, 80, 82, 0.6);
-  font-size: 16px;
-}
+  .job-links a {
+    padding: 20px 0px;
+    color: rgba(79, 80, 82, 0.6);
+    font-size: 16px;
+  }
 
-.job-links a:hover {
-  color: #6637f5;
-}
+  .job-links a:hover {
+    color: #6637f5;
+  }
 
-.job-header {
-  display: flex;
-  flex-direction: row;
+  .job-header {
+    display: flex;
+    flex-direction: row;
 
-  .job-summary-div {
-    width: 70%;
-    .job-title {
-      font-size: 30px;
-    }
-    .job-attributes {
-      color: #6637f5;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      font-size: 16px;
-      .job-attributes span {
-        color: rgba(79, 80, 82, 0.6);
+    .job-summary-div {
+      width: 70%;
+      .job-title {
+        font-size: 30px;
+      }
+      .job-attributes {
+        color: #6637f5;
+        padding: 10px 0px;
+        font-size: 16px;
+        .job-attributes span {
+          color: rgba(79, 80, 82, 0.6);
+        }
       }
     }
+
+    .apply-div {
+      width: 30%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .apply-button {
+      background-color: #6637f5;
+      color: #ffffff;
+      font-size: 24px;
+      border-color: #6637f5;
+      border-style: none;
+      border-radius: 30px;
+      padding: 15px 20px;
+    }
+
+    .apply-button:hover {
+      opacity: 90%;
+      cursor: pointer;
+    }
+  }
+  .job-description {
+    padding-bottom: 20px;
+    font-size: 18px;
   }
 
-  .apply-div {
-    width: 30%;
-    display: flex;
-    justify-content: flex-end;
+  .content-intro {
+    margin-bottom: 30px;
   }
 
-  .apply-button {
-    background-color: #6637f5;
-    color: #ffffff;
+  h3, h4 {
+    font-family: "Medium";
+    margin: 20px 0px 10px 0px;
+  }
+
+  h3 {
     font-size: 24px;
-    border-color: #6637f5;
-    border-style: none;
-    border-radius: 30px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-right: 20px;
-    padding-left: 20px;
+  }
+  h4 {
+    font-size: 20px;
   }
 
-  .apply-button:hover {
-    opacity: 90%;
-    cursor: pointer;
+  p {
+    margin: 10px 0px;
   }
-}
 
-.job-description {
-  padding-bottom: 20px;
-  font-size: 18px;
-}
+  ul {
+    margin-bottom: 20px;
+  }
 
-.content-intro {
-  margin-bottom: 30px;
-}
-
-h3 {
-  font-family: "Medium";
-  font-size: 24px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-h4 {
-  font-family: "Medium";
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-p {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-ul {
-  margin-bottom: 20px;
-}
-
-li {
-  margin-bottom: 10px;
-  padding-left: 10px;
-}
+  li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+  }
 
 @media only screen and (max-width: 1024px) {
   .job-page {
     width: 80vw;
   }
-  .job-links, .job-links a {
+  .job-links,
+  .job-links a {
     font-size: 14px;
   }
   .job-header {
@@ -135,12 +128,18 @@ li {
   }
 }
 
+.id-not-found {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
 @media only screen and (max-width: 768px) {
   .job-page {
     width: 85vw;
   }
-
-  .job-links, .job-links a {
+  .job-links,
+  .job-links a {
     font-size: 12px;
   }
   .job-header {
@@ -154,10 +153,7 @@ li {
     }
     .apply-button {
       font-size: 18px;
-      padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 17px;
-    padding-left: 17px;
+      padding: 17px 12px;
     }
   }
   .job-description {
@@ -178,7 +174,9 @@ li {
     width: 85vw;
   }
 
-  .job-links, .job-links a {
+  .job-links,
+  .job-links a {
+
     font-size: 12px;
   }
   .job-header {
