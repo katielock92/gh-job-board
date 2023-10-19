@@ -8,32 +8,26 @@ import MainApiProvider from "./contexts/MainApiContext";
 import FooterComponent from "./components/FooterComponent";
 import JobPage from "./pages/JobPage";
 import HomePage from "./pages/HomePage";
-import "./styles/App.css";
 import "./styles/fonts.css";
 import "./styles/header.css";
-import "./styles/filters-section.css";
 import "./styles/footer.css";
-import "./styles/job-page.css"
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  // <React.StrictMode>
-    <MainApiProvider>
-        <BrowserRouter>
-          <HeaderComponent />
-          <Routes>
-            {/* Route for homepage: */}
-            <Route path="/" element={<HomePage />} />
-            {/* Route for job page based on id: */}
-            <Route path="/jobs/:id" element={<JobPage />} />
-            {/* Redirects invalid paths to the homepage: */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-          <FooterComponent/>
-        </BrowserRouter>
-    </MainApiProvider>
-  // </React.StrictMode>
+  <MainApiProvider>
+    <BrowserRouter>
+      <HeaderComponent />
+      <Routes>
+        {/* Route for homepage: */}
+        <Route path="/" element={<HomePage />} />
+        {/* Route for job page based on id: */}
+        <Route path="/jobs/:id" element={<JobPage />} />
+        {/* Redirects invalid paths to the homepage: */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      <FooterComponent />
+    </BrowserRouter>
+  </MainApiProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

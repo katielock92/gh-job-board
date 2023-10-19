@@ -1,54 +1,53 @@
 * {
-     font-family: "Light";
+  font-family: "Light";
 }
 
-.footer {
-     display: block;
-     position: bottom;
-     text-align: center;
-     bottom: 0;
-     left: 0;
-     z-index: 10;
-     /* helps stick the footer to bottom of the page - 100vw */
-     width: 100vw;
-     padding: 0.5rem 0;
-     font-size: 12px;
-     line-height: 2em;
-     margin-top: 30px;
-     border-top: 1px solid #cccccc;
+footer {
+  position: absolute;
+  display: block;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 0.5rem 0;
+  font-size: 12px;
+  line-height: 2em;
+  margin: 0;
+  border-top: 1px solid #cccccc;
 }
 
 .footer-greenhouse {
-     display: flex;
-     flex-wrap: wrap;
-     text-align: center;
-     width: 100%;
-     padding: 0 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  padding: 0 0.5rem;
 }
 
 .greenhouse {
-     flex-wrap: wrap;
-     vertical-align: bottom;
-     justify-content: center;
-     width: 100%;
-     font-size: 14px;
+  flex-wrap: wrap;
+  vertical-align: bottom;
+  justify-content: center;
+  width: 100%;
+  font-size: 14px;
 }
 
 .greenhouse-logo {
-     vertical-align: middle;
-     flex-flow: column nowrap;
-     padding-left: 0.35rem;
-     width: 95px;
+  vertical-align: middle;
+  flex-flow: column nowrap;
+  padding-left: 0.35rem;
+  width: 95px;
 }
 
 .footer-privacy {
-     position: relative;
-     text-align: center;
-     width: 100%;
+  position: relative;
+  text-align: center;
+  width: 100%;
 }
 
 .privacy-policy-link {
-     padding-left: 0.25rem;
-     text-decoration: none;
-     color: #0942B0
+  padding-left: 0.25rem;
+  text-decoration: none;
+  color: #0942b0;
 }

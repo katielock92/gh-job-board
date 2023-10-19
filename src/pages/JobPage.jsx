@@ -1,6 +1,7 @@
 import { Parser } from "html-to-react";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import "../styles/job-page.css";
 
 export default function JobPage() {
   const { id } = useParams();
@@ -40,33 +41,31 @@ export default function JobPage() {
     const jobCard = apiData;
 
     return (
-      <main>
-        <div className="job-page">
-          <p className="job-links">
-            <Link to="/">All Positions</Link> {`>`} {jobCard.title}
-          </p>
-          <div className="job-header">
-            <div className="job-summary-div">
-              <h1 className="job-title">{jobCard.title}</h1>
-              <p className="job-attributes">
-                {jobCard.location.name} <span> | </span>{" "}
-                {jobCard.departments[0].name} team <span> | </span>{" "}
-                {jobCard.metadata[0].value}
-              </p>
-            </div>
-            <div className="apply-div">
-              <a href={jobCard.absolute_url + `#app`}>
-                <button className="apply-button">Apply now</button>
-              </a>
-            </div>
+      <main className="job-page">
+        <p className="job-links">
+          <Link to="/">All Positions</Link> {`>`} {jobCard.title}
+        </p>
+        <div className="job-header">
+          <div className="job-summary-div">
+            <h1 className="job-title">{jobCard.title}</h1>
+            <p className="job-attributes">
+              {jobCard.location.name} <span> | </span>{" "}
+              {jobCard.departments[0].name} team <span> | </span>{" "}
+              {jobCard.metadata[0].value}
+            </p>
           </div>
-          <div
-            className="job-description"
-            dangerouslySetInnerHTML={{
-              __html: htmlParser.parse(jobCard.content),
-            }}
-          ></div>
+          <div className="apply-div">
+            <a href={jobCard.absolute_url + `#app`}>
+              <button className="apply-button">Apply now</button>
+            </a>
+          </div>
         </div>
+        <div
+          className="job-description"
+          dangerouslySetInnerHTML={{
+            __html: htmlParser.parse(jobCard.content),
+          }}
+        ></div>
       </main>
     );
   } else {
@@ -75,8 +74,10 @@ export default function JobPage() {
     }, 5000);
     return (
       <main>
-        <div className="id-not-found"><p>Uh oh! We couldn't find a job with an id of {id}.</p>
-        <p>Redirecting to the homepage in 5 seconds...</p></div>
+        <div className="id-not-found">
+          <p>Uh oh! We couldn't find a job with an id of {id}.</p>
+          <p>Redirecting to the homepage in 5 seconds...</p>
+        </div>
       </main>
     );
   }
