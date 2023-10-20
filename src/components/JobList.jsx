@@ -24,7 +24,40 @@ export default function JobList() {
     return <div className="no-jobs">No API data to display</div>;
   }
 
-  //   Add a function here to check if the job list > 0 and to return a message if it is 0
+  //   create new array of departments that have open roles
+  const departmentsWithJobs = apiData.departments.filter(
+    (department) => department.jobs.length > 0
+  );
 
-  console.log(apiData.departments);
+  //   return statement if there are no open roles
+  if (departmentsWithJobs.length === 0) {
+    return <div className="no-jobs">No open roles available</div>;
+  }
+
+  return (
+    <div className="all-jobs">
+      {departmentsWithJobs.map((department) => (
+        <div className="department-box" key={department.id}>
+          <div className="department-name">{department.name}</div>
+          {department.jobs.map((job) => (
+            <div className="job-item" key={job.id}>
+              <div className="job-item-details">
+                <div className="job-item-title">
+                  <Link className="job-item-title" to={`/jobs/${job.id}`}>
+                    {job.title}
+                  </Link>
+                </div>
+                <div className="job-item-location">{job.location.name}</div>
+              </div>
+              <div className="job-button-div">
+                <Link to={`/jobs/${job.id}`}>
+                  <button className="job-button">View position</button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
 }

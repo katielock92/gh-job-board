@@ -90,80 +90,67 @@ main {
 
 .all-jobs {
   display: flex;
+  flex-direction: column;
   margin: auto;
   width: 75vw;
 }
 
-.job-box {
-  display: block;
-  margin: auto;
-  width: 75vw;
-  height: 100%;
-  text-decoration: none;
+.department-box {
+  margin-bottom: 20px;
+}
+
+.department-name {
+  font-size: 24px;
+  font-family: "Medium";
 }
 
 .job-item {
-  /* Change flex-box to grid to test */
-  text-align: center;
-  padding: 0px;
-  display: grid;
-  row-gap: 10px;
-  grid-template-columns: 44% 28% 28%;
-  grid-auto-columns: minmax(0, 1fr); /* Set equal column size */
-
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; */
-  width: 100%;
-  height: 10vh;
-  background-color: #ffffff;
-  border: 1.2px solid #cccccc;
-  /* this brings the borders of rows to overlap and align with each other: */
-  margin-bottom: -1px;
-  align-content: center;
-}
-
-.job-item:hover {
-  background-color: rgba(112, 41, 255, 0.1);
-  border: 1px solid #6637f5;
-  border-radius: 3px;
-  /* this brings the hovered row above the others so the full colour shows: */
-  /* not working as expected now - revisit this */
-  z-index: 10;
-}
-
-/* Line Add it to work with Grid */
-.job-item-title .job-item-location .job-item-department {
-  /* comment because I was using grid */
-  /* width: 30%; */
-  padding-left: 1vw;
-  background-color: transparent;
-
-  /* Add it to center display */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: inline-flex;
+  justify-content: space-between;
+  margin-left: 2vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 72.73vw;
+  border-bottom: 1px solid #cccccc;
 }
 
 .job-item-title {
-  font-weight: 600;
-  color: #333;
-  font-size: 1rem;
+  font-family: "Medium";
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.job-item-title:hover {
+  color: #6637f5;
 }
 
 .job-item-location {
-  color: #949393;
-  font-weight: 500;
-  font-size: 1rem;
+  color: rgba(79, 80, 82, 0.8);
 }
 
-.job-item-department {
-  color: #949393;
-  font-weight: 500;
-  font-size: 1rem;
+.job-item-details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: clamp(50%, 65%, 75%);
 }
+
+.job-button {
+  background-color: #6637f5;
+  color: #ffffff;
+  font-size: 20px;
+  border-color: #6637f5;
+  border-style: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.job-button:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
 .no-jobs {
   width: 100%;
   text-align: center;
@@ -182,12 +169,4 @@ main {
   animation: spinner 0.3s linear infinite;
 }
 
-/* responsive design for the jobs table section */
-
-@media only screen and (max-width: 600px) {
-  .job-item {
-    font-size: 0.9rem;
-    height: 15vh;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+/* add responsive design for job table */
