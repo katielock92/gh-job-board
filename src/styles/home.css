@@ -11,22 +11,19 @@ body {
 }
 
 main {
-  padding-top: clamp(11vh, 10vh, 9vh);
+  padding-top: clamp(100px, 10vh, 150px);
   /* this leaves sufficient space for the footer */
   padding-bottom: 15vh;
+  width: 75vw;
 }
 
-.about-div {
-  padding-top: 20px;
-  width: 75vw;
+.power-div {
   margin: auto;
-  .power-div {
-    line-height: 40px;
-    font-size: 30px;
-    color: rgba(79, 80, 82, 0.6);
-    .text-purple {
-      color: #6637f5;
-    }
+  line-height: 111px;
+  font-size: 90px;
+  color: rgba(79, 80, 82, 0.6);
+  .text-purple {
+    color: #6637f5;
   }
 }
 
@@ -38,17 +35,31 @@ main {
   .open-div,
   h3 {
     color: #7029ff;
-    font-size: 20px;
+    font-size: 40px;
   }
   .open-div,
   p {
     margin-top: 1vh;
     font-family: "Light";
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (max-width: 1200px) {
+  .about-div {
+    .power-div {
+      line-height: 90px;
+      font-size: 80px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  main {
+    width: 80vw;
+  }
+
   .about-div {
     .power-div {
       line-height: 70px;
@@ -67,23 +78,33 @@ main {
   }
 }
 
-@media only screen and (min-width: 1084px) {
-  .about-div {
-    .power-div {
-      line-height: 111px;
-      font-size: 90px;
-    }
+@media only screen and (max-width: 768px) {
+  main {
+    width: 85vw;
   }
+
+  .power-div {
+    line-height: 40px;
+    font-size: 30px;
+  }
+
   .open-div {
     .open-div,
     h3 {
-      font-size: 40px;
+      font-size: 20px;
     }
     .open-div,
     p {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
+}
+@media only screen and (max-width: 640px) {
+  .power-div {
+    line-height: 35px;
+    font-size: 25px;
+  }
+
 }
 
 /* Job table section */
@@ -108,10 +129,7 @@ main {
   display: flex;
   flex-direction: inline-flex;
   justify-content: space-between;
-  margin-left: 2vw;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 72.73vw;
+  margin: 20px 2vw;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -139,15 +157,18 @@ main {
 .job-button {
   background-color: #6637f5;
   color: #ffffff;
-  font-size: 20px;
-  border-color: #6637f5;
+  font-size: 14px;
+  border-color: transparent;
   border-style: none;
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 0 30px;
+  line-height: 1;
+  height: 40px;
+  font-weight: 400;
 }
 
 .job-button:hover {
-  opacity: 80%;
+  background-color: #4f5052;
   cursor: pointer;
 }
 
@@ -169,4 +190,31 @@ main {
   animation: spinner 0.3s linear infinite;
 }
 
-/* add responsive design for job table */
+@media only screen and (max-width: 1024px) {
+  .all-jobs {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .all-jobs {
+    width: 85vw;
+  }
+  .department-name {
+    font-size: 20px;
+  }
+  .job-item-title {
+    font-size: 16px;
+  }
+  .job-item-location {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .job-item {
+    display: block;
+  }
+
+  .job-button {
+    margin-bottom: 20px;
+  }
+}

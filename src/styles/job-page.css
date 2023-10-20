@@ -7,8 +7,9 @@ main {
 
 .job-links,
 .job-links a {
-  color: rgba(79, 80, 82, 0.6);
+  color: rgba(79, 80, 82, 0.7);
   font-size: 16px;
+  padding-top: clamp(25px, 5vh, 50px);
 }
 
 .job-links a:hover {
@@ -43,16 +44,19 @@ main {
   .apply-button {
     background-color: #6637f5;
     color: #ffffff;
-    font-size: 20px;
-    border-color: #6637f5;
+    font-size: 14px;
+    border-color: transparent;
     border-style: none;
     border-radius: 30px;
-    padding: 30px 20px;
+    padding: 0 30px;
+    line-height: 1;
+    height: 40px;
+    font-weight: 400;
   }
 
   .apply-button:hover {
-    opacity: 80%;
-    cursor: pointer;
+    background-color: #4f5052;
+  cursor: pointer;
   }
 }
 .job-description {
@@ -91,7 +95,7 @@ li {
 }
 
 @media only screen and (max-width: 1024px) {
-  .job-page {
+  main {
     width: 80vw;
   }
   .job-links,
@@ -109,9 +113,6 @@ li {
       }
     }
 
-    .apply-button {
-      font-size: 22px;
-    }
   }
   .job-description {
     font-size: 16px;
@@ -133,7 +134,7 @@ li {
 }
 
 @media only screen and (max-width: 768px) {
-  .job-page {
+  main {
     width: 85vw;
   }
   .job-links,
@@ -149,10 +150,6 @@ li {
         }
       }
     }
-    .apply-button {
-      font-size: 18px;
-      padding: 17px 12px;
-    }
   }
   .job-description {
     font-size: 14px;
@@ -167,11 +164,7 @@ li {
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .job-page {
-    width: 85vw;
-  }
-
+@media only screen and (max-width: 640px) {
   .job-links,
   .job-links a {
     font-size: 12px;
@@ -191,7 +184,6 @@ li {
       justify-content: center;
     }
     .apply-button {
-      font-size: 18px;
       margin-bottom: 20px;
     }
   }

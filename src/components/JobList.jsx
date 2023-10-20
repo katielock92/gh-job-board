@@ -13,7 +13,11 @@ export default function JobList() {
 
   // Loading and error handling logic
   if (loading) {
-    return;
+    return (
+        <main>
+        <div className="loading"></div>
+      </main>
+    )
   }
   if (error) {
     return <div className="no-jobs">Error: {error.message}</div>;
