@@ -1,3 +1,5 @@
+// Component purpose: defining the footer to be displayed on all pages
+
 export default function FooterComponent() {
   return (
     <footer>

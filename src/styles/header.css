@@ -1,3 +1,5 @@
+/* Styling specific to the header component */
+
 header {
   z-index: 1;
   position: fixed;

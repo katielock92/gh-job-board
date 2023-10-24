@@ -1,3 +1,4 @@
+// Util purpose: creating a custom hook for fetching API data
 
 import { useEffect, useState } from 'react';
 

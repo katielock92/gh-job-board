@@ -1,3 +1,5 @@
+// Component purpose: for the section about mx51 that is displayed on the homepage below the header, but above the job table
+
 export default function About() {
   return (
     <div className="about-div">
@@ -5,13 +7,6 @@ export default function About() {
         <span className="text-purple">Pass on the power</span> of leading
         merchant payments & commerce experiences.
       </div>
-      {/* <div className="image-div">
-        <img
-          className="tshirt-image"
-          src={require("../assets/images/mx-tshirt.png")}
-          alt={"mx51 tshirt"}
-        />
-      </div> */}
       <div className="open-div">
         <h3>Open positions</h3>
         <p>

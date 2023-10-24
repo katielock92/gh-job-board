@@ -1,3 +1,5 @@
+// Component purpose: defining the header to be displayed on all pages
+
 export default function HeaderComponent() {
   return (
     <header>

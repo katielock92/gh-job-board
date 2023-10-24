@@ -1,18 +1,22 @@
-import { Parser } from "html-to-react";
+// Imports:
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { Parser } from "html-to-react";
 import "../styles/job-page.css";
 
 export default function JobPage() {
+  // Define id as the params for the page
   const { id } = useParams();
   const navigate = useNavigate();
   const [apiData, setApiData] = useState(null);
   const [loading, setLoading] = useState(true);
   const htmlParser = new Parser();
 
+  // Fetch data from individual job API based on id:
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // This URL to be replaced with /mx51/ when doing live deployment
         const response = await fetch(
           `https://boards-api.greenhouse.io/v1/boards/mx51dev/jobs/${id}`
         );
@@ -31,12 +35,14 @@ export default function JobPage() {
     fetchData();
   }, [id]);
 
+  // Display loading state while API is fetching:
   if (loading) {
     return (
       <main>
         <div className="loading"></div>
       </main>
     );
+    // Create variable with API data and return the job information:
   } else if (apiData) {
     const jobCard = apiData;
 
@@ -68,6 +74,7 @@ export default function JobPage() {
         ></div>
       </main>
     );
+    // If no matching job found with id, display message and redirect to main page:
   } else {
     setTimeout(() => {
       navigate("/");

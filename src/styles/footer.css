@@ -1,8 +1,7 @@
-* {
-  font-family: "Light";
-}
+/* Styling specific to the footer component */
 
 footer {
+  font-family: "Light";
   position: absolute;
   display: block;
   text-align: center;
