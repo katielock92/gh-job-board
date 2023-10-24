@@ -7,6 +7,11 @@ export default function About() {
         <span className="text-purple">Pass on the power</span> of leading
         merchant payments & commerce experiences.
       </div>
+      <div className="tshirt-div"><img
+          className="tshirt-image"
+          src={require("../assets/images/mx-tshirt.png")}
+          alt={"mx51 t-shirt"}
+        /></div>
       <div className="open-div">
         <h3>Open positions</h3>
         <p>

@@ -47,7 +47,7 @@ export default function JobPage() {
     const jobCard = apiData;
 
     return (
-      <main>
+      <main className="job-page">
         <p className="job-links">
           <Link to="/">All Positions</Link> {`>`} {jobCard.title}
         </p>

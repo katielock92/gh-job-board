@@ -1,10 +1,10 @@
 /* Styling specific to the individual job pages */
 
-main {
+.job-page {
+  /* Specifying width etc on a div-level to allow for variations */
+  width: 75vw;
   display: block;
   margin: auto;
-  width: 75vw;
-  line-height: 1.4;
 }
 
 .job-links,
@@ -58,7 +58,7 @@ main {
 
   .apply-button:hover {
     background-color: #4f5052;
-  cursor: pointer;
+    cursor: pointer;
   }
 }
 .job-description {
@@ -96,8 +96,9 @@ li {
   padding-left: 10px;
 }
 
+/* Adjustments for xs computer screens: */
 @media only screen and (max-width: 1024px) {
-  main {
+  .job-page {
     width: 80vw;
   }
   .job-links,
@@ -135,8 +136,10 @@ li {
   font-size: 20px;
 }
 
+
+/* Adjustments for tablets: */
 @media only screen and (max-width: 768px) {
-  main {
+  .job-page {
     width: 85vw;
   }
   .job-links,
@@ -166,6 +169,7 @@ li {
   }
 }
 
+/* Adjustments for mobile devices: */
 @media only screen and (max-width: 640px) {
   .job-links,
   .job-links a {
