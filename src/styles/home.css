@@ -4,6 +4,17 @@
   font-family: "Light";
   color: #4f5052;
   margin: 0;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 body {
@@ -16,7 +27,7 @@ main {
   /* This keeps sufficient space for the header at the top: */
   padding-top: clamp(75px, 12vh, 150px);
   /* This leaves sufficient space for the footer at the bottom: */
-  padding-bottom: 15vh;
+  padding-bottom: 35vh;
   line-height: 1.4;
 }
 
@@ -110,6 +121,7 @@ main {
     font-family: "Medium";
     font-size: 20px;
     text-decoration: none;
+    transition: ease 0.4s;
   }
 
   .job-item-title:hover {
@@ -138,6 +150,7 @@ main {
     line-height: 1;
     height: 40px;
     font-weight: 400;
+    transition: ease 0.4s;
   }
 
   .job-button:hover {
@@ -179,7 +192,9 @@ main {
 
 /* Adjustments for tablets: */
 @media only screen and (max-width: 768px) {
-
+  main {
+    padding-bottom: 25vh;
+  }
   .power-div {
     width: 85vw;
     line-height: 40px;

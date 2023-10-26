@@ -7,11 +7,11 @@
   margin: auto;
 }
 
-.job-links,
-.job-links a {
+.job-links, .job-links a {
   color: rgba(79, 80, 82, 0.7);
   font-size: 16px;
   padding-top: clamp(25px, 5vh, 50px);
+  transition: ease 0.4s;
 }
 
 .job-links a:hover {
@@ -54,6 +54,7 @@
     line-height: 1;
     height: 40px;
     font-weight: 400;
+    transition: ease 0.4s;
   }
 
   .apply-button:hover {
