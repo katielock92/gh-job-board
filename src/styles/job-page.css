@@ -1,16 +1,21 @@
 /* Styling specific to the individual job pages */
 
+
+.smiling-lady-img {
+  width: 100vw;
+}
+
 .job-page {
   /* Specifying width etc on a div-level to allow for variations */
   width: 75vw;
   display: block;
   margin: auto;
+  padding: 5vh 0 0 0;
 }
 
 .job-links, .job-links a {
   color: rgba(79, 80, 82, 0.7);
   font-size: 16px;
-  padding-top: clamp(25px, 5vh, 50px);
   transition: ease 0.4s;
 }
 
@@ -99,6 +104,7 @@ li {
 
 /* Adjustments for xs computer screens: */
 @media only screen and (max-width: 1024px) {
+
   .job-page {
     width: 80vw;
   }
@@ -140,6 +146,11 @@ li {
 
 /* Adjustments for tablets: */
 @media only screen and (max-width: 768px) {
+
+  .smiling-lady-img {
+    padding-top: 10vh;
+  }
+
   .job-page {
     width: 85vw;
   }

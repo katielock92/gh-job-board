@@ -11,11 +11,13 @@ import HomePage from "./pages/HomePage";
 import "./styles/fonts.css";
 import "./styles/header.css";
 import "./styles/footer.css";
+import ScrollToTop from "./utils/ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <MainApiProvider>
     <BrowserRouter>
+    <ScrollToTop/>
       <HeaderComponent />
       <Routes>
         {/* Route for homepage: */}
