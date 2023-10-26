@@ -1,0 +1,255 @@
+/* Styling used on all pages */
+
+* {
+  font-family: "Light";
+  color: #4f5052;
+  margin: 0;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  padding: none;
+}
+
+main {
+  /* This leaves sufficient space for the footer at the bottom: */
+  padding-bottom: 10vh;
+  line-height: 1.4;
+}
+
+.no-jobs {
+  width: 100%;
+  text-align: center;
+  color: #949393c7;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.loading {
+  width: 96px;
+  height: 96px;
+  border: 5px solid #cccccc;
+  border-radius: 50%;
+  margin: 0 auto;
+  border-top-color: #7029ff;
+  animation: spinner 0.3s linear infinite;
+}
+
+/* Styling specific to the homepage */
+
+.power-div {
+  padding-top: 15vh;
+  /* Specifying width etc on a div-level to allow for variations */
+  width: 75vw;
+  display: block;
+  margin: auto;
+  /* Styling text in this div */
+  line-height: 111px;
+  font-size: 90px;
+  color: rgba(79, 80, 82, 0.6);
+  .text-purple {
+    color: #6637f5;
+  }
+}
+
+.tshirt-image {
+  padding-top: clamp(50px, 5vh, 100px);
+  width: 100vw;
+}
+
+.open-div {
+  /* Specifying width etc on a div-level to allow for variations */
+  width: 75vw;
+  margin: auto;
+  display: block;
+  padding: 2vh 0;
+  /* Styling text in this div */
+  text-align: center;
+  .open-div,
+  h3 {
+    color: #7029ff;
+    font-size: 40px;
+  }
+  .open-div,
+  p {
+    margin-top: 1vh;
+    font-family: "Light";
+    font-size: 20px;
+  }
+}
+
+.all-jobs {
+  /* Specifying width etc on a div-level to allow for variations */
+  width: 75vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  .department-box {
+    margin-bottom: 20px;
+  }
+
+  .department-name {
+    font-family: "Medium";
+    font-size: 24px;
+  }
+
+  .job-item {
+    display: flex;
+    flex-direction: inline-flex;
+    justify-content: space-between;
+    margin: 0 2vw;
+    padding: 30px 0;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  .job-item-title {
+    font-family: "Medium";
+    font-size: 20px;
+    text-decoration: none;
+    transition: ease 0.4s;
+  }
+
+  .job-item-title:hover {
+    color: #6637f5;
+  }
+
+  .job-item-location {
+    color: rgba(79, 80, 82, 0.8);
+  }
+
+  .job-item-details {
+    width: clamp(50%, 65%, 75%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .job-button-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .job-button {
+    background-color: #6637f5;
+    color: #ffffff;
+    font-size: 14px;
+    border-color: transparent;
+    border-style: none;
+    border-radius: 30px;
+    padding: 0 30px;
+    line-height: 1;
+    height: 40px;
+    font-weight: 400;
+    transition: ease 0.4s;
+  }
+
+  .job-button:hover {
+    background-color: #4f5052;
+    cursor: pointer;
+  }
+}
+
+.mountain-img {
+  width: 100vw;
+  margin-top: 5vh;
+}
+
+/* Adjustments for smaller computer screens: */
+@media only screen and (max-width: 1200px) {
+  .power-div {
+    line-height: 90px;
+    font-size: 80px;
+  }
+}
+
+/* Adjustments for xs computer screens: */
+@media only screen and (max-width: 1024px) {
+  .power-div {
+    width: 80vw;
+    line-height: 70px;
+    font-size: 60px;
+  }
+  .open-div {
+    width: 80vw;
+    .open-div,
+    h3 {
+      font-size: 30px;
+    }
+    .open-div,
+    p {
+      font-size: 18px;
+    }
+  }
+  .all-jobs {
+    width: 80vw;
+  }
+}
+
+/* Adjustments for tablets: */
+@media only screen and (max-width: 768px) {
+  main {
+    padding-bottom: 15vh;
+  }
+  .power-div {
+    width: 85vw;
+    line-height: 40px;
+    font-size: 30px;
+  }
+
+  .open-div {
+    width: 85vw;
+    .open-div,
+    h3 {
+      font-size: 20px;
+    }
+    .open-div,
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .all-jobs {
+    width: 85vw;
+    .department-name {
+      font-size: 20px;
+    }
+    .job-item-title {
+      font-size: 16px;
+    }
+    .job-item-location {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Adjustments for mobile devices: */
+@media only screen and (max-width: 640px) {
+  .power-div {
+    line-height: 35px;
+    font-size: 25px;
+  }
+
+  .all-jobs {
+    .job-item {
+      display: block;
+    }
+
+    .job-item-details {
+      margin-bottom: 15px;
+    }
+  }
+}
