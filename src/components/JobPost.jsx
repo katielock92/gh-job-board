@@ -1,3 +1,5 @@
+// Component purpose: fetch an individual job description by id from the API to render
+
 // Imports:
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
