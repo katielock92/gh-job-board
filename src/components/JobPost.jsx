@@ -18,9 +18,8 @@ export default function JobPost() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // This URL to be replaced with /mx51/ when doing live deployment
         const response = await fetch(
-          `https://boards-api.greenhouse.io/v1/boards/mx51dev/jobs/${id}`
+          `https://boards-api.greenhouse.io/v1/boards/mx51/jobs/${id}`
         );
         if (!response.ok) {
           throw new Error("Error with network response");
@@ -63,7 +62,7 @@ export default function JobPost() {
             </p>
           </div>
           <div className="apply-div">
-            <a href={jobCard.absolute_url + `#app`}>
+            <a href={jobCard.absolute_url + `#app`} rel="noreferrer">
               <button className="apply-button">Apply now</button>
             </a>
           </div>

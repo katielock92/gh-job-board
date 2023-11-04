@@ -1,9 +1,9 @@
+// Imports:
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import HeaderComponent from "./components/HeaderComponent";
-// Imports:
 import MainApiProvider from "./contexts/MainApiContext";
 import FooterComponent from "./components/FooterComponent";
 import JobPage from "./pages/JobPage";
@@ -16,7 +16,7 @@ import ScrollToTop from "./utils/ScrollToTop";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <MainApiProvider>
-    <BrowserRouter>
+    <HashRouter>
     <ScrollToTop/>
       <HeaderComponent />
       <Routes>
@@ -28,6 +28,6 @@ root.render(
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <FooterComponent />
-    </BrowserRouter>
+    </HashRouter>
   </MainApiProvider>
 );

@@ -5,10 +5,10 @@ export default function FooterComponent() {
     <footer>
       <div className="footer-div">
         <div className="logo-div">
-          <a href="https://mx51.com" target="_blank" rel="noreferrer">
+          <a href="https://mx51.com" rel="noreferrer">
             <img
               className="mx-icon"
-              src={require("../assets/images/mx51_icon.png")}
+              src={require("../assets/images/mx51-icon.png")}
               alt={"mx51 logo"}
             />
           </a>
@@ -18,7 +18,6 @@ export default function FooterComponent() {
             Powered by
             <a
               href="https://www.greenhouse.com/"
-              target="_blank"
               rel="noreferrer"
             >
               <img
@@ -32,7 +31,6 @@ export default function FooterComponent() {
             <a
               className="policy-link"
               href="https://www.greenhouse.com/privacy-policy"
-              target="_blank"
               rel="noreferrer"
             >
               Greenhouse Privacy Policy
@@ -43,7 +41,6 @@ export default function FooterComponent() {
           <a
             className="policy-link"
             href="https://mx51.com/privacy-policy-cookies"
-            target="_blank"
             rel="noreferrer"
           >
             mx51 Privacy Policy

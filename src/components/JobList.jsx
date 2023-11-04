@@ -38,7 +38,18 @@ export default function JobList() {
 
   // Return statement if there are no open roles:
   if (departmentsWithJobs.length === 0) {
-    return <div className="no-jobs">There are no current openings.</div>;
+    return (
+      <div className="no-jobs">
+        <p>There are no current openings.</p>
+        <p>Follow us on LinkedIn to be the first to know about new roles:</p>
+        <a
+          href="https://www.linkedin.com/company/mx51"
+          rel="noreferrer"
+        >
+          <button className="li-button">LinkedIn</button>
+        </a>
+      </div>
+    );
   }
 
   // Return and display the open roles:

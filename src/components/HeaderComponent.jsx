@@ -3,10 +3,10 @@
 export default function HeaderComponent() {
   return (
     <header>
-      <a href="https://mx51.com" target="_blank" rel="noreferrer">
+      <a href="https://mx51.com" rel="noreferrer">
         <img
           className="logo"
-          src={require("../assets/images/mx51_logo.png")}
+          src={require("../assets/images/mx51-logo.png")}
           alt={"mx51 logo"}
         />
       </a>

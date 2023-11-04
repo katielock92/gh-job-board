@@ -9,10 +9,10 @@ header {
   justify-content: center;
   margin: 0;
   width: 100vw;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #ffffffb3;
   .logo {
-    padding: 20px;
-    width: clamp(75px, 8vw, 150px);
+    padding: 35px;
+    width: clamp(50px, 6vw, 75px);
     transition: ease 0.4s;
     align-items: center;
     justify-content: center;
@@ -21,5 +21,13 @@ header {
   .logo:hover {
     opacity: 0.7;
     transform: translate(0, 5px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    .logo {
+      padding: 25px;
+    }
   }
 }
